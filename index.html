@@ -13,6 +13,7 @@
     html, body {
         position: relative;
         height: 100%;
+        color: white;
     }
     body {
         background: #000;
@@ -31,9 +32,12 @@
         text-align: center;
         font-size: 18px;
         background: #000;
-        
+        color: white;
     }
-    .swiper-slide img {
+    .swiper-slide h2,
+    .swiper-slide img,
+    .swiper-slide video,
+    .swiper-slide audio {
       width: auto;
       height: auto;
       max-width: 100%;
@@ -46,6 +50,21 @@
       left: 50%;
       top: 50%;
     }
+    .swiper-slide img ~ h2 {
+      top: auto;
+      bottom: 0;
+    }
+
+    .swiper-slide video ~ h2 {
+      top: 0;
+      bottom: auto;
+    }
+
+    .swiper-slide video,
+    .swiper-slide audio {
+      width: 100%;
+      height: 100%;
+    }
     </style>
 </head>
 <body>
@@ -55,11 +74,9 @@
             <div class="swiper-slide">
                 <img data-src="photos/sudhir1.jpg" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                <h2>Happy Birthday, Sudhir!</h2>
             </div>
-            <div class="swiper-slide">
-                <img data-src="photos/sudhir2.jpg" class="swiper-lazy">
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
+
             <div class="swiper-slide">
                 <img data-src="photos/sudhir3.jpg" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
@@ -172,6 +189,14 @@
                 <img data-src="photos/IMG_2939.jpg" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
+            <!-- end old photos -->
+
+            <div class="swiper-slide">
+                <video controls data-src="media/2017-06-26-VIDEO-00031125.mp4.mov" class="swiper-lazy"></video>
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                <h2>Message from Aai</h2>
+            </div>
+
             <div class="swiper-slide">
                 <img data-src="photos/CIMG1573.JPG" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
@@ -212,6 +237,13 @@
                 <img data-src="photos/CIMG1740.JPG" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
+
+            <div class="swiper-slide">
+                <audio controls data-src="media/2017-06-26-AUDIO-00031126.opus" class="swiper-lazy"></audio>
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                <h2>Message from Madhuri</h2>
+            </div>
+
             <div class="swiper-slide">
                 <img data-src="photos/CIMG6258.JPG" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
@@ -240,6 +272,13 @@
                 <img data-src="photos/CIMG6344.JPG" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
+
+            <div class="swiper-slide">
+                <audio controls data-src="media/2017-06-26-AUDIO-00031127.opus" class="swiper-lazy"></audio>
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                <h2>Message from Prakash</h2>
+            </div>
+
             <div class="swiper-slide">
                 <img data-src="photos/DSC_3711.JPG" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
@@ -521,6 +560,13 @@
                 <img data-src="photos/IMG_5293.jpg" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
+
+            <div class="swiper-slide">
+                <video controls data-src="media/2017-06-27-VIDEO-00031128.mp4.mov" class="swiper-lazy"></video>
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                <h2>Message from Kamakshi</h2>
+            </div>
+
             <div class="swiper-slide">
                 <img data-src="photos/IMG_6463.jpg" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
@@ -721,7 +767,7 @@
                 <img data-src="photos/Prashant Pics 034.jpg" class="swiper-lazy">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-
+            
         </div>
         <!-- Add Pagination -->
         <!-- <div class="swiper-pagination swiper-pagination-white"></div> -->
@@ -734,22 +780,7 @@
     <script src="swiper/js/swiper.min.js"></script>
 
     <!-- Initialize Swiper -->
-    <script>
-    var swiper = new Swiper('.swiper-container', {
-        autoplay: 5000,
-        speed: 900,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        // pagination: '.swiper-pagination',
-        paginationClickable: true,
-        // Disable preloading of all images
-        preloadImages: false,
-        lazyLoadingInPrevNext: true,
-        lazyLoadingInPrevNextAmount: 3,
-        // Enable lazy loading
-        lazyLoading: true,
-        grabCursor: true
-    });
-    </script>
+    <script src="index.js"></script>
+
 </body>
 </html>
