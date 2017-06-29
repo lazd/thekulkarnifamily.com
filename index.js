@@ -1,5 +1,5 @@
-var swiper = new Swiper('.swiper-container', {
-    autoplay: 5000,
+var swiperConfig = {
+    //autoplay: 5000,
     speed: 900,
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev',
@@ -12,8 +12,23 @@ var swiper = new Swiper('.swiper-container', {
     // Enable lazy loading
     lazyLoading: true,
     grabCursor: true,
-    keyboardControl: true
-});
+    keyboardControl: true,
+    effect: 'cube',
+    grabCursor: true,
+    cube: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94
+    }
+};
+
+// Disable effects for mobile, it crashes Safari
+if ('ontouchstart' in window) {
+  delete swiperConfig.effect;
+}
+
+var swiper = new Swiper('.swiper-container', swiperConfig);
 
 var swiperElement = document.querySelector('.swiper-container');
 var playingElement;
