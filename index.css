@@ -1,9 +1,58 @@
-body {
-  margin: 0;
+.swiper-slide {
+  position: relative;
 }
 
-html,
-body {
+.blur {
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 10%;
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.blur--top {
+  bottom: auto;
+  top: 0;
+}
+
+.p,
+.y,
+.i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 1000;
+  background: rgba(255, 0, 0, 0.80);
+  padding: 5px;
+  margin: 5px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+
+  border-radius: 100%;
+  font-weight: bold;
+}
+
+.y::after {
+  content: 'Y';
+}
+
+.p {
+  background: rgba(255, 255, 0, 0.80);
+}
+.p::after {
+  content: 'P';
+}
+
+.i {
+  left: auto;
+  right: 0;
+  background: rgba(0, 255, 0, 0.80);
+}
+.i::after {
+  content: 'I';
 }

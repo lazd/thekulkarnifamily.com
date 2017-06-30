@@ -46,6 +46,11 @@ swiper.on('slideChangeStart', function() {
   if (playingElement) {
     playingElement.play();
   }
+
+  var blurElements = swiperElement.querySelectorAll('.blur');
+  Array.prototype.forEach.call(blurElements, function(blurElement) {
+    blurElement.hidden = false;
+  });
 });
 
 window.onload = function() {
@@ -61,6 +66,12 @@ window.addEventListener('keydown', function(event) {
             else {
                 playingElement.pause();
             }
+        }
+        else {
+          var blurElements = swiperElement.querySelectorAll('.blur');
+          Array.prototype.forEach.call(blurElements, function(blurElement) {
+            blurElement.hidden = !blurElement.hidden;
+          });
         }
     }
 });
