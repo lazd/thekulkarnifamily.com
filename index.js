@@ -8,7 +8,7 @@ var swiperConfig = {
     // Disable preloading of all images
     preloadImages: false,
     lazyLoadingInPrevNext: true,
-    lazyLoadingInPrevNextAmount: 3,
+    lazyLoadingInPrevNextAmount: 8,
     // Enable lazy loading
     lazyLoading: true,
     grabCursor: true,
