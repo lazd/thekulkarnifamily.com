@@ -30,15 +30,37 @@ if ('ontouchstart' in window) {
 
 var swiper = new Swiper('.swiper-container', swiperConfig);
 
-var swiperElement = document.querySelector('.swiper-container');
 var playingElement;
+function getPlayingElement() {
+  playingElement = swiperElement.querySelector('.swiper-slide-active audio, .swiper-slide-active video');
+}
+
+var swiperElement = document.querySelector('.swiper-container');
 swiper.on('slideChangeStart', function() {
   if (playingElement) {
     playingElement.pause();
   }
 
-  playingElement = swiperElement.querySelector('.swiper-slide-active audio, .swiper-slide-active video');
+  getPlayingElement();
+
   if (playingElement) {
     playingElement.play();
   }
+});
+
+window.onload = function() {
+    getPlayingElement();
+};
+
+window.addEventListener('keydown', function(event) {
+    if(event.keyCode === 32) {
+        if (playingElement) {
+            if (playingElement.paused) {
+                playingElement.play();
+            }
+            else {
+                playingElement.pause();
+            }
+        }
+    }
 });
